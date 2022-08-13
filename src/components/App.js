@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 import LocationSearch from './LocationSearch'
 import LocationTable from './LocationTable'
+import WeatherDisplay from './WeatherDisplay';
 
 function App() {
   const [locations, setLocations] = useState([])
@@ -14,6 +14,7 @@ function App() {
       <h1>Weather App</h1>
       <LocationSearch onSearch={addLocation} />
       <LocationTable locations={locations} />
+      <WeatherDisplay name={locations[0]}/>
     </div>
   );
 }
