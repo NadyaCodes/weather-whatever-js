@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="container">
       <h1>Weather App</h1>
-      <LocationSearch onSearch={addLocation} />
-      <LocationTable locations={locations} />
+      <LocationSearch onSearch={addLocation} locations={locations}/>
+      <LocationTable locations={locations} setLocations={setLocations}/>
       <WeatherDisplay name={locations[0]}/>
     </div>
   );

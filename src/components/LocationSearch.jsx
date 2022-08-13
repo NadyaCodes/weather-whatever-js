@@ -6,8 +6,14 @@ export default function LocationSearch(props) {
   const disableSearch = locationSearch.trim() === '';
 
   const addLocation = () => {
-    props.onSearch(locationSearch);
-    setLocationSearch('');
+    if (!props.locations.includes(locationSearch)) {
+      props.onSearch(locationSearch);
+      setLocationSearch('');
+    } else {
+      alert("You've already picked that place")
+      setLocationSearch('');
+    }
+
   }
 
   return (
