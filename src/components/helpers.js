@@ -1,5 +1,3 @@
-
-
 //get weather constants
 const key = process.env.REACT_APP_WEATHER_API_KEY;
 const host = process.env.REACT_APP_WEATHER_API_HOST;
@@ -43,16 +41,15 @@ const getWeather = async (location, setCurrentWeather) => {
   }
 };
 
-
 const imageObject = {
- cold: './images/cold.png',
- frigid: './images/frigid.png',
- happySun: './images/happySun.png',
- hot: './images/hot.png',
- ski: './images/ski.png',
- sleepy: './images/sleepy.png',
- warm: './images/warm.png',
- weird: './images.weird.png'
-}
+  cold: "./images/cold.png",
+  frigid: "./images/frigid.png",
+  happySun: "./images/happySun.png",
+  hot: "./images/hot.png",
+  ski: "./images/ski.png",
+  sleepy: "./images/sleepy.png",
+  warm: "./images/warm.png",
+  weird: "./images.weird.png",
+};
 
 module.exports = { getWeather, options, imageObject };

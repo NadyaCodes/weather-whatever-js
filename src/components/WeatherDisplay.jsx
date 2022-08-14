@@ -1,24 +1,31 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { imageObject } from "./helpers";
 
 export default function WeatherDisplay(props) {
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState("");
+  const [message, setMessage] = useState("");
 
   const findImage = () => {
-    const nightString = "night"
-    
-    if (props.currentWeather.current !== undefined && props.currentWeather.current.condition.icon.indexOf(nightString) >= 0) {
-      setImage(imageObject.sleepy)
-    } else if (props.currentWeather.current !== undefined){
-      setImage(props.currentWeather.current.condition.icon)
+    const nightString = "night";
+
+    if (
+      props.currentWeather.current !== undefined &&
+      props.currentWeather.current.condition.icon.indexOf(nightString) >= 0
+    ) {
+      setImage(imageObject.sleepy);
+      setMessage("It's night - why do you even want to know??");
+    } else if (props.currentWeather.current !== undefined) {
+      setImage(props.currentWeather.current.condition.icon);
+      setMessage("");
     } else {
-      setImage('')
+      setImage("");
+      setMessage("");
     }
-  }
+  };
 
   useEffect(() => {
-    findImage()
-  }, [props.currentWeather])
+    findImage();
+  }, [props.currentWeather]);
 
   return (
     <div>
@@ -28,12 +35,18 @@ export default function WeatherDisplay(props) {
             This is the current weather for{" "}
             {props.name || "wherever this place is"}
           </h2>
-          <h3>{props.currentWeather.current.condition.text}</h3>
+          <h2>{message}</h2>
+
           <img
-            src={image === '' ? "//cdn.weatherapi.com/weather/64x64/night/113.png" : image}
+            src={
+              image === ""
+                ? "//cdn.weatherapi.com/weather/64x64/night/113.png"
+                : image
+            }
             alt="weather image"
             width="200"
           />
+          <p>{props.currentWeather.current.condition.text}</p>
           <table className="table">
             <thead>
               <tr>
