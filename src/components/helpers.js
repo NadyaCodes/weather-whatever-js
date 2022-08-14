@@ -1,4 +1,5 @@
 
+
 //get weather constants
 const key = process.env.REACT_APP_WEATHER_API_KEY;
 const host = process.env.REACT_APP_WEATHER_API_HOST;
@@ -23,7 +24,6 @@ const options = {
   },
 };
 
-
 const getWeather = async (location, setCurrentWeather) => {
   try {
     const data = await fetch(
@@ -32,16 +32,27 @@ const getWeather = async (location, setCurrentWeather) => {
     );
 
     if (!data.ok) {
-      return console.log("Hi from helper function - please pick a valid city")
+      return console.log("Hi from helper function - please pick a valid city");
     }
-    
+
     const jsonData = await data.json();
     setCurrentWeather(jsonData);
   } catch (err) {
-    console.log("line 47 error from helpers.js")
+    console.log("line 47 error from helpers.js");
     console.log(err.message);
   }
 };
 
 
-module.exports = {getWeather, options}
+const imageObject = {
+ cold: './images/cold.png',
+ frigid: './images/frigid.png',
+ happySun: './images/happySun.png',
+ hot: './images/hot.png',
+ ski: './images/ski.png',
+ sleepy: './images/sleepy.png',
+ warm: './images/warm.png',
+ weird: './images.weird.png'
+}
+
+module.exports = { getWeather, options, imageObject };
