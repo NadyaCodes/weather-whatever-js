@@ -25,7 +25,7 @@ const options = {
 const getWeather = async (location, setCurrentWeather) => {
   try {
     const data = await fetch(
-      `https://weatherapi-com.p.rapidapi.com/current.json?q=${location}`,
+      `https://weatherapi-com.p.rapidapi.com/current.json?q=${location}&days=3&aqi=yes`,
       options
     );
 
@@ -52,6 +52,7 @@ const imageObject = {
   weird: "./images/weird.png",
   rain: "./images/rain.png",
   questionable: "./images/questionable.png",
+  fine: "./images/fine.png",
 };
 
 const findImage = (props, setImage, setMessage) => {
@@ -60,6 +61,7 @@ const findImage = (props, setImage, setMessage) => {
   const cloudString = "cloud";
   const sunString = "sun";
   const snowString = "snow";
+  console.log(props.currentWeather.current);
 
   if (
     props.currentWeather.current !== undefined &&
@@ -69,6 +71,27 @@ const findImage = (props, setImage, setMessage) => {
   ) {
     setImage(imageObject.sleepy);
     setMessage("It's night - why do you even want to know??");
+  } else if (
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf("thunder") >= 0 ||
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf("blizzard") >= 0 ||
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf("heavy") >= 0 ||
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf("sleet") >= 0 ||
+    props.currentWeather.current.condition.text.toLowerCase().indexOf("ice") >=
+      0 ||
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf("torrential") >= 0
+  ) {
+    setImage(imageObject.weird);
+    setMessage("Be careful out there!!! It could get wild");
   } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
@@ -87,7 +110,9 @@ const findImage = (props, setImage, setMessage) => {
     props.currentWeather.current.condition.text
       .toLowerCase()
       .indexOf(cloudString) >= 0 ||
-    props.currentWeather.current.condition.text === "Overcast"
+    props.currentWeather.current.condition.text === "Overcast" ||
+    props.currentWeather.current.condition.text === "Mist" ||
+    props.currentWeather.current.condition.text === "Fog"
   ) {
     setImage(imageObject.questionable);
     setMessage(
@@ -114,8 +139,8 @@ const findImage = (props, setImage, setMessage) => {
     setImage(imageObject.frigid);
     setMessage("STAY INSIDE - IT'S NOT WORTH IT OUT THERE!!!");
   } else if (props.currentWeather.current !== undefined) {
-    setImage(imageObject.weird);
-    setMessage("THE WEATHER IS WEIRD - I DON'T KNOW HOW TO FEEL");
+    setImage(imageObject.fine);
+    setMessage("It's fine, I guess...not GREAT, but it could be worse...");
   } else {
     setImage("");
     setMessage("");
