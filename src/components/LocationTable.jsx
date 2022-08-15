@@ -10,16 +10,16 @@ export default function LocationTable(props) {
     setLocations([location, ...locations]);
   };
 
-  const deleteCity= (city) => {
-    console.log(city)
-    console.log(locations)
-    const index = locations.indexOf(city)
-    console.log(index)
+  const deleteCity = (city) => {
+    console.log(city);
+    console.log(locations);
+    const index = locations.indexOf(city);
+    console.log(index);
     if (index > -1) {
       locations.splice(index, 1);
     }
-    setLocations([...locations])
-  }
+    setLocations([...locations]);
+  };
 
   return (
     <div>
@@ -36,7 +36,9 @@ export default function LocationTable(props) {
               <td>
                 <button onClick={() => selectCity(location)}>{location}</button>
               </td>
-              <td><button onClick={() => deleteCity(location)}>Delete</button></td>
+              <td>
+                <button onClick={() => deleteCity(location)}>Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>

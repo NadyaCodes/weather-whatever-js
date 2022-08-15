@@ -35,8 +35,12 @@ function App() {
     <div className="container">
       <h1>Weather App</h1>
       <LocationSearch onSearch={addLocation} locations={locations} />
-      <LocationTable locations={locations} setLocations={setLocations} />
-      <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />
+      {locations.length > 0 && (
+        <div>
+          <LocationTable locations={locations} setLocations={setLocations} />
+          <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />
+        </div>
+      )}
     </div>
   );
 }
