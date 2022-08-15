@@ -49,45 +49,73 @@ const imageObject = {
   ski: "./images/ski.png",
   sleepy: "./images/sleepy.png",
   warm: "./images/warm.png",
-  weird: "./images.weird.png",
-  rain: "./images.rain.png",
+  weird: "./images/weird.png",
+  rain: "./images/rain.png",
   questionable: "./images/questionable.png",
 };
 
 const findImage = (props, setImage, setMessage) => {
   const nightString = "night";
+  const rainString = "rain";
+  const cloudString = "cloud";
+  const sunString = "sun";
+  const snowString = "snow";
 
   if (
     props.currentWeather.current !== undefined &&
-    props.currentWeather.current.condition.icon.indexOf(nightString) >= 0
+    props.currentWeather.current.condition.icon
+      .toLowerCase()
+      .indexOf(nightString) >= 0
   ) {
     setImage(imageObject.sleepy);
     setMessage("It's night - why do you even want to know??");
-  } else if (props.currentWeather.current.condition.text === "Rain") {
+  } else if (
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf(rainString) >= 0
+  ) {
     setImage(imageObject.rain);
     setMessage("Rain, rain, go away...👀");
   } else if (
-    props.currentWeather.current.condition.text === "Partly cloudy" ||
-    props.currentWeather.current.condition.text === "Cloudy" ||
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf(snowString) >= 0
+  ) {
+    setImage(imageObject.ski);
+    setMessage("SNOW! That can only mean one thing...GET OUT THOSE GOGGLES!");
+  } else if (
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf(cloudString) >= 0 ||
     props.currentWeather.current.condition.text === "Overcast"
   ) {
     setImage(imageObject.questionable);
-    setMessage("It's not raining yet? But there's cloud, so it COULD rain...");
+    setMessage(
+      "There's nothing falling from the sky yet? But there's cloud, so it COULD...👀"
+    );
   } else if (props.currentWeather.current.temp_c >= 30) {
     setImage(imageObject.hot);
     setMessage("Too. Freaking. Hot.");
   } else if (props.currentWeather.current.temp_c >= 25) {
     setImage(imageObject.warm);
-    setMessage("Hot. But, manageable 🤷‍♀️");
+    setMessage("Hot, but manageable 🤷‍♀️");
   } else if (
     props.currentWeather.current.temp_c >= 15 &&
-    props.currentWeather.current.condition.text === "Sunny"
+    props.currentWeather.current.condition.text
+      .toLowerCase()
+      .indexOf(sunString) >= 0
   ) {
     setImage(imageObject.happySun);
     setMessage("Juuuuuuuuust right.");
+  } else if (props.currentWeather.current.temp_c <= 0) {
+    setImage(imageObject.cold);
+    setMessage("It's a little chilly, but it's not too bad!");
+  } else if (props.currentWeather.current.temp_c <= -15) {
+    setImage(imageObject.frigid);
+    setMessage("STAY INSIDE - IT'S NOT WORTH IT OUT THERE!!!");
   } else if (props.currentWeather.current !== undefined) {
-    setImage(props.currentWeather.current.condition.icon);
-    setMessage("");
+    setImage(imageObject.weird);
+    setMessage("THE WEATHER IS WEIRD - I DON'T KNOW HOW TO FEEL");
   } else {
     setImage("");
     setMessage("");
