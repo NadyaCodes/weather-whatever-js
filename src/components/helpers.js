@@ -25,7 +25,7 @@ const options = {
 const getWeather = async (location, setCurrentWeather) => {
   try {
     const data = await fetch(
-      `https://weatherapi-com.p.rapidapi.com/current.json?q=${location}&days=3&aqi=yes`,
+      `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${location}&days=3`,
       options
     );
 
@@ -61,7 +61,7 @@ const findImage = (props, setImage, setMessage) => {
   const cloudString = "cloud";
   const sunString = "sun";
   const snowString = "snow";
-  console.log(props.currentWeather.current);
+  console.log(props.currentWeather);
 
   if (
     props.currentWeather.current !== undefined &&

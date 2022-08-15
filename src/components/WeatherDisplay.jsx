@@ -16,7 +16,6 @@ export default function WeatherDisplay(props) {
       {props.currentWeather.location !== undefined && (
         <div>
           <h2>
-            This is the current weather for{" "}
             {props.name || "wherever this place is"},{" "}
             {props.currentWeather.location.country}
           </h2>
@@ -57,6 +56,32 @@ export default function WeatherDisplay(props) {
                 <td>{props.currentWeather.current.feelslike_f} F</td>
                 <td>{props.currentWeather.current.precip_in} in</td>
                 <td>{props.currentWeather.current.wind_mph} MPH</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Maybe tomorrow looks better?</h2>
+          <table className="table forecast">
+          <thead>
+              <tr>
+                <td>Temperature</td>
+                <td>Precipitation</td>
+                <td>Wind</td>
+                <td>Humidity</td>
+                <td>Condition</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{props.currentWeather.forecast.forecastday[1].day.mintemp_c} - {props.currentWeather.forecast.forecastday[1].day.maxtemp_c} C</td>
+                <td>{props.currentWeather.forecast.forecastday[1].day.totalprecip_mm} mm</td>
+                <td>{props.currentWeather.forecast.forecastday[1].day.maxwind_kph} KPH</td>
+                <td>{props.currentWeather.forecast.forecastday[1].day.avghumidity}</td>
+                <td>{props.currentWeather.forecast.forecastday[1].day.condition.text}</td>
+              </tr>
+              <tr>
+                <td>{props.currentWeather.forecast.forecastday[1].day.mintemp_f} - {props.currentWeather.forecast.forecastday[1].day.maxtemp_f} F</td>
+                <td>{props.currentWeather.forecast.forecastday[1].day.totalprecip_in} in</td>
+                <td>{props.currentWeather.forecast.forecastday[1].day.maxwind_mph} MPH</td>
               </tr>
             </tbody>
           </table>
