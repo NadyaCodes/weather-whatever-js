@@ -24,20 +24,30 @@ export default function LocationTable(props) {
   return (
     <div>
       <h2>Locations</h2>
-      <table className="table table-hover">
+      <table className="table">
         <thead>
           <tr>
-            <th>Name</th>
+            <th colspan="2">Name</th>
           </tr>
         </thead>
         <tbody>
           {locations.map((location, index) => (
             <tr key={index}>
               <td>
-                <button onClick={() => selectCity(location)}>{location}</button>
+                <button
+                  className="btn btn-outline-dark"
+                  onClick={() => selectCity(location)}
+                >
+                  {location}
+                </button>
               </td>
-              <td>
-                <button onClick={() => deleteCity(location)}>Delete</button>
+              <td className="align-self-center">
+                <button
+                  className="btn btn-outline-danger btn-sm"
+                  onClick={() => deleteCity(location)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}

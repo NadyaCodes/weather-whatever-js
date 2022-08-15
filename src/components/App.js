@@ -9,6 +9,7 @@ function App() {
   const [locations, setLocations] = useState([]);
   const [currentWeather, setCurrentWeather] = useState({});
   const [validLocation, setValidLocation] = useState("");
+  const [showLocations, setShowLocations] = useState(true);
 
   //one day, I should be able to join this API call with the get weather function
   const addLocation = (location) => {
@@ -31,16 +32,37 @@ function App() {
     }
   }, [validLocation, locations]);
 
+  const toggleShowLocations = () => {
+    if (showLocations === true) {
+      setShowLocations(false);
+    } else {
+      setShowLocations(true);
+    }
+  };
+
   return (
     <div className="container">
       <h1>Weather App</h1>
       <LocationSearch onSearch={addLocation} locations={locations} />
-      {locations.length > 0 && (
+      {showLocations === true && (
         <div>
-          <LocationTable locations={locations} setLocations={setLocations} />
-          <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />
+          {locations.length > 0 && (
+            <div>
+              <LocationTable
+                locations={locations}
+                setLocations={setLocations}
+              />
+            </div>
+          )}
         </div>
       )}
+      <button
+        className="btn btn-outline-success"
+        onClick={() => toggleShowLocations()}
+      >
+        Toggle locations
+      </button>
+      <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />
     </div>
   );
 }
