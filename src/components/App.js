@@ -41,30 +41,34 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1>Weather App</h1>
-      <LocationSearch onSearch={addLocation} locations={locations} />
-      {showLocations === true && (
-        <div>
-          {locations.length > 0 && (
-            <div>
-              <LocationTable
-                locations={locations}
-                setLocations={setLocations}
-              />
-            </div>
-          )}
-        </div>
-      )}
-      {locations.length > 0 && (
-        <button
-          className="btn btn-outline-success"
-          onClick={() => toggleShowLocations()}
-        >
-          Toggle locations
-        </button>
-      )}
-      <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />
+    <div className="site">
+      <div className="pageTitle">
+        <h1>What is the Whether?</h1>
+      </div>
+      <div className="container siteContent">
+        <LocationSearch onSearch={addLocation} locations={locations} />
+        {showLocations === true && (
+          <div>
+            {locations.length > 0 && (
+              <div>
+                <LocationTable
+                  locations={locations}
+                  setLocations={setLocations}
+                />
+              </div>
+            )}
+          </div>
+        )}
+        {locations.length > 0 && (
+          <button
+            className="btn btn-outline-success"
+            onClick={() => toggleShowLocations()}
+          >
+            Toggle locations
+          </button>
+        )}
+        <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />
+      </div>
     </div>
   );
 }

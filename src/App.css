@@ -1,8 +1,48 @@
-.App {
+:root {
+  --pale: #e2adf2;
+  --dark: #222a68;
+  --med-dark: #654597;
+  --med-pale: #ab81cd;
+  --bright: #574ae2;
+}
+
+* {
+  font-family: "Dosis", sans-serif;
+}
+
+#root {
+  background-color: white;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("../public/images/sky.jpeg");
+  height: 100vw;
+  width: 100vw;
+}
+
+.pageTitle {
+  background-color: var(--pale);
+  padding: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.App-logo {
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+} */
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +75,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
