@@ -64,7 +64,7 @@ export default function WeatherDisplay(props) {
                 <td>{props.currentWeather.current.temp_f} F</td>
                 <td>{props.currentWeather.current.feelslike_f} F</td>
                 <td>{props.currentWeather.current.precip_in} in</td>
-                <td colspan="3">{props.currentWeather.current.wind_mph} MPH</td>
+                <td colSpan="3">{props.currentWeather.current.wind_mph} MPH</td>
               </tr>
             </tbody>
           </table>
@@ -119,7 +119,7 @@ export default function WeatherDisplay(props) {
                   }{" "}
                   in
                 </td>
-                <td colspan="3">
+                <td colSpan="3">
                   {props.currentWeather.forecast.forecastday[1].day.maxwind_mph}{" "}
                   MPH
                 </td>

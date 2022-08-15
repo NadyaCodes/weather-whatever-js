@@ -56,12 +56,14 @@ function App() {
           )}
         </div>
       )}
-      <button
-        className="btn btn-outline-success"
-        onClick={() => toggleShowLocations()}
-      >
-        Toggle locations
-      </button>
+      {locations.length > 0 && (
+        <button
+          className="btn btn-outline-success"
+          onClick={() => toggleShowLocations()}
+        >
+          Toggle locations
+        </button>
+      )}
       <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />
     </div>
   );

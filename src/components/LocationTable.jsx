@@ -27,7 +27,7 @@ export default function LocationTable(props) {
       <table className="table">
         <thead>
           <tr>
-            <th colspan="2">Name</th>
+            <th colSpan="2">Name</th>
           </tr>
         </thead>
         <tbody>
