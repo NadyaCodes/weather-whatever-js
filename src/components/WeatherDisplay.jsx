@@ -1,31 +1,39 @@
 import React, { useState, useEffect } from "react";
-import { imageObject } from "./helpers";
+import { findImage } from "./helpers";
 
 export default function WeatherDisplay(props) {
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
 
-  const findImage = () => {
-    const nightString = "night";
+  // const findImage = (props) => {
+  //   const nightString = "night";
 
-    if (
-      props.currentWeather.current !== undefined &&
-      props.currentWeather.current.condition.icon.indexOf(nightString) >= 0
-    ) {
-      setImage(imageObject.sleepy);
-      setMessage("It's night - why do you even want to know??");
-    } else if (props.currentWeather.current !== undefined) {
-      setImage(props.currentWeather.current.condition.icon);
-      setMessage("");
-    } else {
-      setImage("");
-      setMessage("");
-    }
-  };
+  //   if (
+  //     props.currentWeather.current !== undefined &&
+  //     props.currentWeather.current.condition.icon.indexOf(nightString) >= 0
+  //   ) {
+  //     setImage(imageObject.sleepy);
+  //     setMessage("It's night - why do you even want to know??");
+  //   } else if (props.currentWeather.current.temp_c >= 30){
+  //     setImage(imageObject.hot);
+  //     setMessage("Too. Freaking. Hot.");
+  //   } else if (props.currentWeather.current.temp_c >= 25){
+  //     setImage(imageObject.warm);
+  //     setMessage("Hot. But, manageable 🤷‍♀️");
+  //   } else if (props.currentWeather.current !== undefined) {
+  //     setImage(props.currentWeather.current.condition.icon);
+  //     setMessage("");
+  //   } else {
+  //     setImage("");
+  //     setMessage("");
+  //   }
+  // };
 
   useEffect(() => {
-    findImage();
-  }, [props.currentWeather]);
+    if (props.currentWeather.location) {
+      findImage(props, setImage, setMessage);
+    }
+  }, [props.currentWeather, props]);
 
   return (
     <div>
@@ -33,7 +41,8 @@ export default function WeatherDisplay(props) {
         <div>
           <h2>
             This is the current weather for{" "}
-            {props.name || "wherever this place is"}
+            {props.name || "wherever this place is"},{" "}
+            {props.currentWeather.location.country}
           </h2>
           <h2>{message}</h2>
 
