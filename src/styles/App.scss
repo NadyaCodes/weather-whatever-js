@@ -21,7 +21,7 @@ html, body, #root, #root>div {
       rgba(255, 255, 255, 0.8),
       rgba(255, 255, 255, 0.8)
     ),
-    url("../public/images/sky.jpeg");
+    url("/images/sky.jpeg");
     background-size: cover;
 }
 
@@ -79,6 +79,36 @@ div.pageTitle > h1 {
   animation-delay: 2s;
 }
 
+
+.btn {
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+.btn:disabled {
+  color: var(--dark);
+  border-color: var(--dark);
+  background-color: var(--med-pale);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--med-dark);
+  border-color: var(--dark);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--med-pale);
+  border-color: var(--dark);
+}
+
+.btn-outline-danger:hover {
+  background-color: var(--bright);
+  border-color: var(--dark);
+}
+
+// .table-success {
+//   background-color: var(--bright) !important;
+// }
 
 
 /* body {

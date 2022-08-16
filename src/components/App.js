@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
+import "../styles/App.scss";
 import LocationSearch from "./LocationSearch";
 import LocationTable from "./LocationTable";
 import WeatherDisplay from "./WeatherDisplay";
