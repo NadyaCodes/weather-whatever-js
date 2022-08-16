@@ -10,6 +10,10 @@
   font-family: "Dosis", sans-serif;
 }
 
+html, body, #root, #app>div {
+  height: 100%
+}
+
 #root {
   background-color: white;
   background-image: linear-gradient(
@@ -17,8 +21,9 @@
       rgba(255, 255, 255, 0.8)
     ),
     url("../public/images/sky.jpeg");
-  height: 100vw;
-  width: 100vw;
+    background-size: cover;
+  /* height: 100vw;
+  width: 100vw; */
 }
 
 .pageTitle {
