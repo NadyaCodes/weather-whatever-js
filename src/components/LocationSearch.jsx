@@ -16,9 +16,9 @@ export default function LocationSearch(props) {
   };
 
   return (
-    <div>
+    <div className="locationSearch">
       <label>
-        Add Location
+        City Search
         <input
           className="m1-1 mr-1"
           type="text"
@@ -31,7 +31,7 @@ export default function LocationSearch(props) {
         onClick={addLocation}
         disabled={disableSearch}
       >
-        Search
+        Add to List
       </button>
     </div>
   );

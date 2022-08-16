@@ -1,130 +1,5 @@
-// @import "./node_modules/bootstrap/scss/bootstrap";
-
-// // @import "./node_modules/bootstrap/scss/bootstrap";
-// // @import "./node_modules/bootstrap/scss/bootstrap";
 @import "./variables";
 
-// $primary: lime;
-
-// $success: cyan;
-
-// // @import "~bootstrap/scss/functions";
-// // @import "~bootstrap/scss/variables";
-// // @import "~bootstrap/scss/mixins";
-// @import "./node_modules/bootstrap/scss/bootstrap";
-
-// @import './map-amends';
-// @import '~utilities/bootstrap-utilities';
-
-// Bootstrap main import
-// @import "~bootstrap/scss/bootstrap";
-// @import "./node_modules/bootstrap/scss/bootstrap";
-
-// @import './bootstrap-api-utilities'
-
-// @use "bootstrap-required" as bootstrap;
-
-// $primary: bootstrap.$purple-500;
-// $warning: bootstrap.shift-color($primary, 40%); // Example only showing use of functions
-
-// $primary: lime;
-// $light: lime;
-// $success: yellow;
-// $btn-primary: lime;
-// $btn-dark: lime;
-// $btn-success: lime;
-// @import "bootstrap";
-// // @import "./node_modules/bootstrap/scss/bootstrap";
-// //
-
-// $primary: lime;
-// $danger: cyan;
-// $btn-primary: lime;
-// $btn-dark: lime;
-// $bg-success: lime;
-
-// $body-bg: cyan;
-// $body-color: lime;
-// $success: lime;
-// // $utilities-border-colors: lime;
-// // $negative-spacers: 5rem;
-// // @import "./node_modules/bootstrap/scss/functions";
-// // @import "./node_modules/bootstrap/scss/variables";
-
-// // @import "./node_modules/bootstrap/scss/variables";
-// // @import "./node_modules/bootstrap/scss/mixins";
-// @import "./node_modules/bootstrap/scss/functions";
-// @import "./node_modules/bootstrap/scss/bootstrap-utilities";
-// // // @import "~bootstrap/scss/bootstrap.scss";
-// // @import "./node_modules/bootstrap/scss/mixins";
-
-// // @import "./node_modules/bootstrap/scss/bootstrap";
-
-// $pale: #e2adf2;
-// $dark: #222a68;
-// $med-dark: #654597;
-// $med-pale: #ab81cd;
-// $bright: #574ae2;
-
-// :root {
-//   --primary: #654597;
-// }
-
-//   $theme-colors: (
-//   "primary": $pale,
-//   "danger": $bright
-// );
-
-// $body-bg: #000;
-// $body-color: #111;
-
-// @import "./node_modules/bootstrap/scss/variables";
-// @import "./node_modules/bootstrap/scss/mixins";
-
-// $brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
-// $brand-success:         #5cb85c !default;
-// $brand-info:            #5bc0de !default;
-// $brand-warning:         #f0ad4e !default;
-// $brand-danger:  green;
-
-// $btn-primary: green;
-// $bg-success: green;
-// $info: green;
-// $warning: green;
-
-// @import "bootstrap";
-
-//   $theme-colors: (
-//    primary: red,
-// );
-
-// $primary:       $med-dark !default;
-// $secondary:     $med-pale !default;
-// $success:       $med-dark !default;
-// $info:          $med-pale !default;
-// $warning:       $bright !default;
-// $danger:        $bright !default;
-// $light:         $pale !default;
-// $dark:          $dark !default;
-
-// $theme-colors: () !default;
-// $theme-colors: map-merge(
-//   (
-//     "primary":    $primary,
-//     "secondary":  $secondary,
-//     "success":    $success,
-//     "info":       $info,
-//     "warning":    $warning,
-//     "danger":     $danger,
-//     "light":      $light,
-//     "dark":       $dark
-//   ),
-//   $theme-colors
-// );
-
-// @each $color, $value in $theme-colors {
-//   @include bg-variant('.btn-#{$primary}', $pale);
-// }
 
 * {
   font-family: "Dosis", sans-serif;
@@ -211,6 +86,7 @@ div.pageTitle > h1 {
     4px 0px 33px -22px $med-dark, 3px 5px 35px -10px $med-dark !important;
   box-shadow: -4px 0px 33px -22px $med-dark, 4px 0px 33px -22px $med-dark,
     3px 5px 35px -10px $med-dark !important;
+  margin: .5rem;
 }
 
 .btn-dark-theme {
@@ -230,103 +106,28 @@ div.pageTitle > h1 {
     3px 5px 25px 0px $dark-theme !important;
 }
 
-// .btn:active,
-// .btn:focus,
-// .btn:target,
-// .btn:active:focus {
-//   color: $dark-theme;
-//   border-color: $dark-theme !important;
-// }
 
-// .btn-outline-primary {
-//   color: $dark;
-//   border-color: $dark;
-// }
 
-// .btn-outline-success {
-//   color: $dark;
-//   border-color: $dark;
-// }
-
-// .btn-outline-danger {
-//   color: $bright;
-//   border-color: $dark;
-// }
-
-// .btn-outline-primary {
-//   @include button-outline-variant($med-dark, #222222, lighten($med-dark,5%), $med-dark);
-// }
-
-// .btn[disabled=disabled], .btn:disabled {
-//   color: var(--dark) !important;
-//   border-color: var(--dark) !important;
-//   background-color: var(--med-pale) !important;
-// }
-
-// .btn-outline-dark:hover {
-//   background-color: var(--med-dark) !important;
-//   border-color: var(--dark) !important;
-// }
-
-// .btn-outline-success:hover {
-//   background-color: var(--med-pale) !important;
-//   border-color: var(--dark) !important;
-// }
-
-// .btn-outline-danger:hover {
-//   background-color: var(--bright) !important;
-//   border-color: var(--dark)!important;
-// }
-
-// .table-success {
-//   background-color: var(--bright) !important;
-// }
-
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.m1-1 {
+  margin: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.locationsList {
+  border: .2rem solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.display {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.toggleButton {
+  max-height: 6.5rem;
+  margin: 1rem 3rem;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.arrow {
+  font-size: xx-large;
+  margin: -2rem;
+  padding: 0;
+}
