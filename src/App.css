@@ -8,10 +8,11 @@
 
 * {
   font-family: "Dosis", sans-serif;
+  /* margin: .3rem; */
 }
 
-html, body, #root, #app>div {
-  height: 100%
+html, body, #root, #root>div {
+  min-height: 100vh;
 }
 
 #root {
@@ -22,16 +23,63 @@ html, body, #root, #app>div {
     ),
     url("../public/images/sky.jpeg");
     background-size: cover;
-  /* height: 100vw;
-  width: 100vw; */
 }
 
 .pageTitle {
-  background-color: var(--pale);
+  background-image: linear-gradient(var(--pale), var(--med-pale));
   padding: 2rem;
   margin-bottom: 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
+
+div.pageTitle > h1 {
+  display: flex;
+  text-align: center;
+  padding: .2rem 3rem;
+  /* flex-direction: row;
+  color: blue; */
+}
+
+.qleft, .qright {
+  display: flex;
+  /* overflow: hidden; */
+}
+
+.q1, .q2, .q3, .q4, .q5 {
+  font-size: xx-large;
+  padding: .5rem;
+  animation: appear 3s ease infinite;
+  opacity: 0;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+}
+
+
+.q2 {
+  animation-delay: .5s;
+}
+
+.q3 {
+  animation-delay: 1s;
+}
+
+.q4 {
+  animation-delay: 1.5s;
+}
+
+.q5 {
+  animation-delay: 2s;
+}
+
+
 
 /* body {
   margin: 0;
