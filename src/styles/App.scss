@@ -1,6 +1,5 @@
 @import "./variables";
 
-
 * {
   font-family: "Dosis", sans-serif;
   /* margin: .3rem; */
@@ -35,14 +34,11 @@ div.pageTitle > h1 {
   display: flex;
   text-align: center;
   padding: 0.2rem 3rem;
-  /* flex-direction: row;
-  color: blue; */
 }
 
 .qleft,
 .qright {
   display: flex;
-  /* overflow: hidden; */
 }
 
 .q1,
@@ -86,7 +82,7 @@ div.pageTitle > h1 {
     4px 0px 33px -22px $med-dark, 3px 5px 35px -10px $med-dark !important;
   box-shadow: -4px 0px 33px -22px $med-dark, 4px 0px 33px -22px $med-dark,
     3px 5px 35px -10px $med-dark !important;
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .btn-dark-theme {
@@ -98,7 +94,7 @@ div.pageTitle > h1 {
   color: $med-dark !important;
 }
 
-.btn:hover {
+.btn:hover:not(.toggleButton) {
   transform: translate(0.1rem, -0.1rem) !important;
   -webkit-box-shadow: -4px 0px 23px -17px $dark-theme,
     4px 0px 23px -17px $dark-theme, 3px 5px 25px 0px $dark-theme !important;
@@ -106,14 +102,28 @@ div.pageTitle > h1 {
     3px 5px 25px 0px $dark-theme !important;
 }
 
-
+div.locationSearch > button {
+  max-height: 2.4rem;
+}
 
 .m1-1 {
   margin: 1rem;
 }
 
-.locationsList {
-  border: .2rem solid black;
+.locationSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.locationTable {
+  margin-right: 0;
+  padding: 1rem;
+
+  -webkit-box-shadow: 0px 1px 8px 0px $dark-theme;
+  box-shadow: 0px 1px 8px 0px $dark-theme !important;
+  border-radius: 0.2rem;
+  background-color: transparentize(#edf5fa, 0.5) !important;
 }
 
 .display {
@@ -122,8 +132,20 @@ div.pageTitle > h1 {
 
 .toggleButton {
   max-height: 6.5rem;
-  margin: 1rem 3rem;
+  margin-right: 3rem;
+  margin-left: 0;
   padding: 0;
+  border: 0 !important;
+  border-radius: 0 0.5rem 0.5rem 0 !important;
+  background-color: transparentize($med-pale, 0.5) !important;
+  color: $dark-theme !important;
+  -webkit-box-shadow: 5px 1px 10px -5px $dark-theme !important;
+  box-shadow: 5px 1px 10px -5px $dark-theme !important;
+}
+
+.toggleButton:hover {
+  background-color: $med-dark !important;
+  color: $pale-theme !important;
 }
 
 .arrow {

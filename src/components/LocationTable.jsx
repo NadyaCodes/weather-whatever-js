@@ -22,14 +22,11 @@ export default function LocationTable(props) {
   };
 
   return (
-    <div>
-      <h2>Locations</h2>
+    <div className="locations-table">
+      <div className="locations-title">
+        <h2>Locations</h2>
+      </div>
       <table className="table">
-        <thead>
-          <tr>
-            <th colSpan="2">Name</th>
-          </tr>
-        </thead>
         <tbody>
           {locations.map((location, index) => (
             <tr key={index}>
