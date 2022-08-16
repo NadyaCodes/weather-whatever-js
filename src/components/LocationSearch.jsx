@@ -27,7 +27,7 @@ export default function LocationSearch(props) {
         />
       </label>
       <button
-        className="btn btn-primary"
+        className="btn btn-dark-theme"
         onClick={addLocation}
         disabled={disableSearch}
       >

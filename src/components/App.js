@@ -4,12 +4,15 @@ import LocationSearch from "./LocationSearch";
 import LocationTable from "./LocationTable";
 import WeatherDisplay from "./WeatherDisplay";
 import { getWeather, options } from "./helpers";
+import parse from "html-react-parser";
+import "bootstrap";
 
 function App() {
   const [locations, setLocations] = useState([]);
   const [currentWeather, setCurrentWeather] = useState({});
   const [validLocation, setValidLocation] = useState("");
   const [showLocations, setShowLocations] = useState(true);
+  const [arrow, setArrow] = useState(parse("&uarr;"));
 
   //one day, I should be able to join this API call with the get weather function
   const addLocation = (location) => {
@@ -34,8 +37,12 @@ function App() {
 
   const toggleShowLocations = () => {
     if (showLocations === true) {
+      // arrow=parse('&uarr;')
+      setArrow(parse("&darr;"));
       setShowLocations(false);
     } else {
+      // arrow = parse('&darr;')
+      setArrow(parse("&uarr;"));
       setShowLocations(true);
     }
   };
@@ -43,19 +50,40 @@ function App() {
   return (
     <div className="site">
       <div className="pageTitle">
-        <span className="qleft"><span className="q1"><h1>?</h1></span>
-        <span className="q2"><h1>?</h1></span>
-        <span className="q3"><h1>?</h1></span>
-        <span className="q4"><h1>?</h1></span>
-        <span className="q5"><h1>?</h1></span>
+        <span className="qleft">
+          <span className="q1">
+            <h1>?</h1>
+          </span>
+          <span className="q2">
+            <h1>?</h1>
+          </span>
+          <span className="q3">
+            <h1>?</h1>
+          </span>
+          <span className="q4">
+            <h1>?</h1>
+          </span>
+          <span className="q5">
+            <h1>?</h1>
+          </span>
         </span>
         <h1>What is the Weather</h1>
         <span className="qright">
-        <span className="q5"><h1>?</h1></span>
-        <span className="q4"><h1>?</h1></span>
-        <span className="q3"><h1>?</h1></span>
-        <span className="q2"><h1>?</h1></span>
-        <span className="q1"><h1>?</h1></span>
+          <span className="q5">
+            <h1>?</h1>
+          </span>
+          <span className="q4">
+            <h1>?</h1>
+          </span>
+          <span className="q3">
+            <h1>?</h1>
+          </span>
+          <span className="q2">
+            <h1>?</h1>
+          </span>
+          <span className="q1">
+            <h1>?</h1>
+          </span>
         </span>
       </div>
       <div className="container siteContent">
@@ -74,10 +102,10 @@ function App() {
         )}
         {locations.length > 0 && (
           <button
-            className="btn btn-outline-success"
+            className="btn btn-dark-theme"
             onClick={() => toggleShowLocations()}
           >
-            Toggle locations
+            {arrow} Toggle locations {arrow}
           </button>
         )}
         <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />

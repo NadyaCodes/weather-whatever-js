@@ -35,7 +35,7 @@ export default function LocationTable(props) {
             <tr key={index}>
               <td>
                 <button
-                  className="btn btn-outline-dark"
+                  className="btn btn-location"
                   onClick={() => selectCity(location)}
                 >
                   {location}
