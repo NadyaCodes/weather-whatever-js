@@ -39,7 +39,7 @@ function App() {
         <LocationSearch onSearch={addLocation} locations={locations} />
         <div className="display">
           <LocationsDisplay locations={locations} setLocations={setLocations} />
-          <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />
+         { locations.length > 0 && <WeatherDisplay name={locations[0]} currentWeather={currentWeather} />}
         </div>
       </div>
     </div>
