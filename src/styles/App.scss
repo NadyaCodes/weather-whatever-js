@@ -116,7 +116,7 @@ div.locationSearch > button {
   align-items: center;
 }
 
-.locationTable {
+.shadowCard {
   margin-right: 0;
   padding: 1rem;
 
@@ -126,8 +126,26 @@ div.locationSearch > button {
   background-color: transparentize(#edf5fa, 0.5) !important;
 }
 
-.display {
+.locations {
   display: flex;
+}
+
+.locationTable {
+  // margin-right: 0;
+  // padding: 1rem;
+
+  // -webkit-box-shadow: 0px 1px 8px 0px $dark-theme;
+  // box-shadow: 0px 1px 8px 0px $dark-theme !important;
+  // border-radius: 0.2rem;
+  // background-color: transparentize(#edf5fa, 0.5) !important;
+}
+
+
+.locationsMinimized {
+  display: flex;
+  flex-direction: column;
+  height: 15.7rem;
+  text-align: center;
 }
 
 .toggleButton {
@@ -152,4 +170,9 @@ div.locationSearch > button {
   font-size: xx-large;
   margin: -2rem;
   padding: 0;
+}
+
+
+.display {
+  display: flex;
 }
