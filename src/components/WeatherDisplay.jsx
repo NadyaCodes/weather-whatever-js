@@ -20,8 +20,8 @@ export default function WeatherDisplay(props) {
   return (
     <div>
       {props.currentWeather.location !== undefined && (
-        <div>
-          <h2>
+        <div className="weather">
+          <h2 className="featuredText">
             {props.name || "wherever this place is"},{" "}
             {props.currentWeather.location.country}
           </h2>

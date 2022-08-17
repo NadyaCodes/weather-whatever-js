@@ -22,6 +22,10 @@ body,
   background-size: cover;
 }
 
+h2, h3 {
+  padding: .5rem 0rem;
+}
+
 .pageTitle {
   background-image: linear-gradient($pale-theme, $med-pale);
   padding: 2rem;
@@ -83,6 +87,7 @@ div.pageTitle > h1 {
   box-shadow: -4px 0px 33px -22px $med-dark, 4px 0px 33px -22px $med-dark,
     3px 5px 35px -10px $med-dark !important;
   margin: 0.5rem;
+  text-transform: capitalize;
 }
 
 .btn-dark-theme {
@@ -130,15 +135,15 @@ div.locationSearch > button {
   display: flex;
 }
 
-.locationTable {
-  // margin-right: 0;
-  // padding: 1rem;
+// .locationTable {
+//   // margin-right: 0;
+//   // padding: 1rem;
 
-  // -webkit-box-shadow: 0px 1px 8px 0px $dark-theme;
-  // box-shadow: 0px 1px 8px 0px $dark-theme !important;
-  // border-radius: 0.2rem;
-  // background-color: transparentize(#edf5fa, 0.5) !important;
-}
+//   // -webkit-box-shadow: 0px 1px 8px 0px $dark-theme;
+//   // box-shadow: 0px 1px 8px 0px $dark-theme !important;
+//   // border-radius: 0.2rem;
+//   // background-color: transparentize(#edf5fa, 0.5) !important;
+// }
 
 
 .locationsMinimized {
@@ -175,4 +180,23 @@ div.locationSearch > button {
 
 .display {
   display: flex;
+  justify-content: left;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featuredText {
+  text-transform: capitalize;
+  font-size: xxx-large;
+  font-weight: 700;
+  border-bottom-style: solid;
+
+  border-image-slice: 1;
+  border-width: 4px;
+  border-image-source: linear-gradient(90deg, $pale-theme, $med-pale);
+  padding: .5rem 2rem;
 }
