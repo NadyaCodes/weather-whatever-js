@@ -10,7 +10,7 @@ export default function LocationSearch(props) {
       props.onSearch(locationSearch);
       setLocationSearch("");
     } else {
-      alert("You've already picked that place");
+      alert("You've already picked that place. Toggle the locations menu");
       setLocationSearch("");
     }
   };
