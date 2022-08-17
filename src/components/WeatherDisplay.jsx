@@ -4,10 +4,11 @@ import { findImage } from "./helpers";
 export default function WeatherDisplay(props) {
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
+  const [animation, setAnimation] = useState("")
 
   useEffect(() => {
     if (props.currentWeather.location) {
-      findImage(props, setImage, setMessage);
+      findImage(props, setImage, setMessage, setAnimation);
     }
   }, [props.currentWeather, props]);
 
@@ -25,6 +26,7 @@ export default function WeatherDisplay(props) {
             {props.name || "wherever this place is"},{" "}
             {props.currentWeather.location.country}
           </h2>
+          <h4>Ummmm - it's {weatherText}?</h4>
           <h2>{message}</h2>
 
           <img
@@ -33,10 +35,11 @@ export default function WeatherDisplay(props) {
                 ? "//cdn.weatherapi.com/weather/64x64/night/113.png"
                 : image
             }
-            alt="weather image"
+            alt="weather emoji"
             width="200"
+            className={`weatherImage ${animation}`}
           />
-          <h3>Oooo - it's {weatherText}</h3>
+
           <table className="table shadowCard">
             <thead className="table-success">
               <tr>

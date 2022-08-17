@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="site">
-      <PageTitle/>
+      <PageTitle />
       <div className="container siteContent">
         <LocationSearch onSearch={addLocation} locations={locations} />
         <div className="display">

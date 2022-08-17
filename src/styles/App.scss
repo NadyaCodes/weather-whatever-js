@@ -22,8 +22,9 @@ body,
   background-size: cover;
 }
 
-h2, h3 {
-  padding: .5rem 0rem;
+h2,
+h3 {
+  padding: 0.5rem 0rem;
 }
 
 .pageTitle {
@@ -135,17 +136,6 @@ div.locationSearch > button {
   display: flex;
 }
 
-// .locationTable {
-//   // margin-right: 0;
-//   // padding: 1rem;
-
-//   // -webkit-box-shadow: 0px 1px 8px 0px $dark-theme;
-//   // box-shadow: 0px 1px 8px 0px $dark-theme !important;
-//   // border-radius: 0.2rem;
-//   // background-color: transparentize(#edf5fa, 0.5) !important;
-// }
-
-
 .locationsMinimized {
   display: flex;
   flex-direction: column;
@@ -177,7 +167,6 @@ div.locationSearch > button {
   padding: 0;
 }
 
-
 .display {
   display: flex;
   justify-content: left;
@@ -198,5 +187,45 @@ div.locationSearch > button {
   border-image-slice: 1;
   border-width: 4px;
   border-image-source: linear-gradient(90deg, $pale-theme, $med-pale);
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
+}
+
+.weatherImage {
+  margin-bottom: 1.7rem;
+}
+
+.happyBounce {
+  animation: happy 2s linear infinite;
+}
+
+@keyframes happy {
+  0% {
+    transform: translate(0, 15px);
+  }
+  25% {
+    transform: translate(35px, -15px) rotate(10deg);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  75% {
+    transform: translate(-35px, -15px) rotate(-10deg);
+  }
+  100% {
+    transform: translate(0, 15px);
+  }
+}
+
+
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate((360deg));
+  }
 }
