@@ -4,7 +4,7 @@ import { findImage } from "./helpers";
 export default function WeatherDisplay(props) {
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
-  const [animation, setAnimation] = useState("")
+  const [animation, setAnimation] = useState("");
 
   useEffect(() => {
     if (props.currentWeather.location) {

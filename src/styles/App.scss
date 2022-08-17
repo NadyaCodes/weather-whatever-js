@@ -28,9 +28,9 @@ h3 {
 }
 
 .pageTitle {
-  background-image: linear-gradient($pale-theme, $med-pale);
+  // background-image: linear-gradient($pale-theme, $med-pale);
   padding: 2rem;
-  margin-bottom: 1rem;
+
   display: flex;
   justify-content: center;
 }
@@ -39,6 +39,7 @@ div.pageTitle > h1 {
   display: flex;
   text-align: center;
   padding: 0.2rem 3rem;
+  font-weight: 500 !important;
 }
 
 .qleft,
@@ -136,17 +137,21 @@ div.locationSearch > button {
   display: flex;
 }
 
+.locationTable {
+  width: 20rem;
+
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
 .locationsMinimized {
-  display: flex;
-  flex-direction: column;
-  height: 15.7rem;
-  text-align: center;
+  width: 8rem;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .toggleButton {
-  max-height: 6.5rem;
-  margin-right: 3rem;
-  margin-left: 0;
+  margin: 0;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: 0;
   border: 0 !important;
   border-radius: 0 0.5rem 0.5rem 0 !important;
@@ -154,6 +159,7 @@ div.locationSearch > button {
   color: $dark-theme !important;
   -webkit-box-shadow: 5px 1px 10px -5px $dark-theme !important;
   box-shadow: 5px 1px 10px -5px $dark-theme !important;
+  display: flex !important;
 }
 
 .toggleButton:hover {
@@ -163,13 +169,13 @@ div.locationSearch > button {
 
 .arrow {
   font-size: xx-large;
-  margin: -2rem;
+  margin: -1rem 0 -0.5rem 0;
   padding: 0;
+  padding-bottom: 0.5rem;
 }
 
 .display {
-  display: flex;
-  justify-content: left;
+  display: grid;
 }
 
 .weather {
@@ -183,11 +189,11 @@ div.locationSearch > button {
   font-size: xxx-large;
   font-weight: 700;
   border-bottom-style: solid;
-
   border-image-slice: 1;
   border-width: 4px;
-  border-image-source: linear-gradient(90deg, $pale-theme, $med-pale);
+  border-image-source: linear-gradient(90deg, $mint, darken($mint, 20%), $mint);
   padding: 0.5rem 2rem;
+  color: darken($mint, 90%);
 }
 
 .weatherImage {
@@ -215,7 +221,6 @@ div.locationSearch > button {
     transform: translate(0, 15px);
   }
 }
-
 
 .spin {
   animation: spin 2s linear infinite;

@@ -4,15 +4,15 @@ import parse from "html-react-parser";
 
 export default function LocationsDisplay(props) {
   const [showLocations, setShowLocations] = useState(true);
-  const [arrow, setArrow] = useState(parse("&#8249;"));
+  const [arrow, setArrow] = useState(parse("&#8593;"));
   const { locations, setLocations } = props;
 
   const toggleShowLocations = () => {
     if (showLocations === true) {
-      setArrow(parse("&#8250;"));
+      setArrow(parse("&#8595;"));
       setShowLocations(false);
     } else {
-      setArrow(parse("&#8249;"));
+      setArrow(parse("&#8593;"));
       setShowLocations(true);
     }
   };
@@ -31,16 +31,8 @@ export default function LocationsDisplay(props) {
           )}
         </div>
       ) : (
-        <div className="locationsMinimized shadowCard">
-          <span>L</span>
-          <span>O</span>
-          <span>C</span>
-          <span>A</span>
-          <span>T</span>
-          <span>I</span>
-          <span>O</span>
-          <span>N</span>
-          <span>S</span>
+        <div className="locations-title shadowCard locationsMinimized">
+          <h4>Locations</h4>
         </div>
       )}
       {locations.length > 0 && (
@@ -48,9 +40,6 @@ export default function LocationsDisplay(props) {
           className="btn btn-dark-theme toggleButton"
           onClick={() => toggleShowLocations()}
         >
-          <div className="arrow">{arrow}</div>
-          <div className="arrow">{arrow}</div>
-          <div className="arrow">{arrow}</div>
           <div className="arrow">{arrow}</div>
         </button>
       )}

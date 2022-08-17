@@ -71,7 +71,7 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   ) {
     setImage(imageObject.sleepy);
     setMessage("It's night - why do you even want to know??");
-    setAnimation("")
+    setAnimation("");
   } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
@@ -93,7 +93,7 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   ) {
     setImage(imageObject.weird);
     setMessage("Be careful out there!!! It could get wild!!!");
-    setAnimation("spin")
+    setAnimation("spin");
   } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
@@ -101,7 +101,7 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   ) {
     setImage(imageObject.rain);
     setMessage("Rain, rain, go away...👀");
-    setAnimation("")
+    setAnimation("");
   } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
@@ -109,7 +109,7 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   ) {
     setImage(imageObject.ski);
     setMessage("SNOW! That can only mean one thing...GET OUT THOSE GOGGLES!");
-    setAnimation("happy")
+    setAnimation("happy");
   } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
@@ -122,15 +122,15 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
     setMessage(
       "There's nothing falling from the sky yet? But there's cloud, so it COULD...👀"
     );
-    setAnimation("")
+    setAnimation("");
   } else if (props.currentWeather.current.temp_c >= 30) {
     setImage(imageObject.hot);
     setMessage("Too. Freaking. Hot.");
-    setAnimation("spin")
+    setAnimation("spin");
   } else if (props.currentWeather.current.temp_c >= 25) {
     setImage(imageObject.warm);
     setMessage("Hot, but manageable 🤷‍♀️");
-    setAnimation("")
+    setAnimation("");
   } else if (
     props.currentWeather.current.temp_c >= 15 &&
     props.currentWeather.current.condition.text
@@ -143,19 +143,19 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   } else if (props.currentWeather.current.temp_c <= 0) {
     setImage(imageObject.cold);
     setMessage("It's a little chilly, but it's not too bad!");
-    setAnimation("")
+    setAnimation("");
   } else if (props.currentWeather.current.temp_c <= -15) {
     setImage(imageObject.frigid);
     setMessage("STAY INSIDE - IT'S NOT WORTH IT OUT THERE!!!");
-    setAnimation("")
+    setAnimation("");
   } else if (props.currentWeather.current !== undefined) {
     setImage(imageObject.fine);
     setMessage("It's fine, I guess...not GREAT, but it could be worse...");
-    setAnimation("")
+    setAnimation("");
   } else {
     setImage("");
     setMessage("");
-    setAnimation("")
+    setAnimation("");
   }
 };
 
