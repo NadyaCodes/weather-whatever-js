@@ -141,10 +141,30 @@ div.locationSearch > button {
   background-color: lighten(#edf5fa, 0.5);
 }
 
+
+//locations section for narrow screens
+@media only screen 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .locations {
+      margin-top: -6rem;
+      .locationsMinimized {
+        max-height: 2rem;
+        border: 0.08rem solid $med-dark !important;
+        color: $med-dark;
+        padding-top: .1rem;
+      }
+      .arrow {
+        font-size: 1.5rem;
+      }
+    }
+}
+
 .locationTable {
   width: 20rem;
   // max-height: 5rem;
   border-radius: 0.5rem 0 0 0.5rem;
+  
 }
 
 .locationsMinimized {
