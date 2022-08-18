@@ -40,7 +40,7 @@ export default function WeatherDisplay(props) {
             className={`weatherImage ${animation}`}
           />
 
-          <table className="table shadowCard">
+          <table className="table shadowCard weatherTable">
             <thead className="table-success">
               <tr>
                 <th scope="row"></th>
@@ -73,7 +73,7 @@ export default function WeatherDisplay(props) {
           </table>
           <br></br>
           <h2>Maybe tomorrow looks better?</h2>
-          <table className="table forecast shadowCard">
+          <table className="table forecast shadowCard weatherTable">
             <thead className="table-success">
               <tr>
                 <th>Temperature</th>
