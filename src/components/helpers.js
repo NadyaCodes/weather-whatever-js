@@ -63,16 +63,17 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   const snowString = "snow";
   console.log(props.currentWeather);
 
+  // if (
+  //   props.currentWeather.current !== undefined &&
+  //   props.currentWeather.current.condition.icon
+  //     .toLowerCase()
+  //     .indexOf(nightString) >= 0
+  // ) {
+  //   setImage(imageObject.sleepy);
+  //   setMessage("It's night - why do you even want to know??");
+  //   setAnimation("disappear");
+  // } else 
   if (
-    props.currentWeather.current !== undefined &&
-    props.currentWeather.current.condition.icon
-      .toLowerCase()
-      .indexOf(nightString) >= 0
-  ) {
-    setImage(imageObject.sleepy);
-    setMessage("It's night - why do you even want to know??");
-    setAnimation("");
-  } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
       .indexOf("thunder") >= 0 ||
@@ -101,7 +102,7 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   ) {
     setImage(imageObject.rain);
     setMessage("Rain, rain, go away...👀");
-    setAnimation("");
+    setAnimation("tilt");
   } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
@@ -109,7 +110,7 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   ) {
     setImage(imageObject.ski);
     setMessage("SNOW! That can only mean one thing...GET OUT THOSE GOGGLES!");
-    setAnimation("happy");
+    setAnimation("happyBounce");
   } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
@@ -122,7 +123,7 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
     setMessage(
       "There's nothing falling from the sky yet? But there's cloud, so it COULD...👀"
     );
-    setAnimation("");
+    setAnimation("spinSlow");
   } else if (props.currentWeather.current.temp_c >= 30) {
     setImage(imageObject.hot);
     setMessage("Too. Freaking. Hot.");
@@ -130,7 +131,7 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   } else if (props.currentWeather.current.temp_c >= 25) {
     setImage(imageObject.warm);
     setMessage("Hot, but manageable 🤷‍♀️");
-    setAnimation("");
+    setAnimation("shudderSlow");
   } else if (
     props.currentWeather.current.temp_c >= 15 &&
     props.currentWeather.current.condition.text
@@ -143,15 +144,15 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   } else if (props.currentWeather.current.temp_c <= 0) {
     setImage(imageObject.cold);
     setMessage("It's a little chilly, but it's not too bad!");
-    setAnimation("");
+    setAnimation("shudderSlow");
   } else if (props.currentWeather.current.temp_c <= -15) {
     setImage(imageObject.frigid);
     setMessage("STAY INSIDE - IT'S NOT WORTH IT OUT THERE!!!");
-    setAnimation("");
+    setAnimation("shudderFast");
   } else if (props.currentWeather.current !== undefined) {
     setImage(imageObject.fine);
     setMessage("It's fine, I guess...not GREAT, but it could be worse...");
-    setAnimation("");
+    setAnimation("tilt");
   } else {
     setImage("");
     setMessage("");

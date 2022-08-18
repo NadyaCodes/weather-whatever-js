@@ -264,7 +264,11 @@ div.locationSearch > button {
 }
 
 .spin {
-  animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+.spinSlow {
+  animation: spin 5s linear infinite;
 }
 
 @keyframes spin {
@@ -275,6 +279,56 @@ div.locationSearch > button {
     transform: rotate((360deg));
   }
 }
+
+.disappear {
+  animation: disappear 10s linear infinite;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 100;
+  }
+  50% {
+    opacity: 0;
+    transform: rotate(-30deg)
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.tilt {
+  animation: tilt 1.5s linear infinite;
+}
+
+@keyframes tilt {
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+}
+
+.shudderSlow {
+  animation: shudder .2s linear infinite;
+}
+
+.shudderFast {
+  animation: shudder .1s linear infinite;
+}
+
+@keyframes shudder {
+  25% {
+    transform: translateX(2px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+}
+
+
+
 
 
 .weatherTable {
