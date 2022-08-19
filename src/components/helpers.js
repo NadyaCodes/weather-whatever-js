@@ -14,7 +14,7 @@ if (host === undefined) {
   );
 }
 
-const Options = {
+export const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": key,
@@ -22,11 +22,11 @@ const Options = {
   },
 };
 
-const getWeather = async (location, setCurrentWeather) => {
+export const getWeather = async (location, setCurrentWeather) => {
   try {
     const data = await fetch(
       `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${location}&days=3`,
-      Options
+      options
     );
 
     if (!data.ok) {
@@ -55,7 +55,7 @@ const imageObject = {
   fine: "./images/fine.png",
 };
 
-const findImage = (props, setImage, setMessage, setAnimation) => {
+export const findImage = (props, setImage, setMessage, setAnimation) => {
   const nightString = "night";
   const rainString = "rain";
   const cloudString = "cloud";
@@ -159,4 +159,4 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   }
 };
 
-module.exports = { getWeather, Options, findImage };
+// module.exports = { getWeather, options, findImage };

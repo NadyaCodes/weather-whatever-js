@@ -4,7 +4,7 @@ import LocationSearch from "./LocationSearch";
 import LocationsDisplay from "./Locations";
 import WeatherDisplay from "./WeatherDisplay";
 import PageTitle from "./PageTitle";
-import { getWeather, Options } from "./helpers";
+import { getWeather, options } from "./helpers";
 import "bootstrap";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   const addLocation = (location) => {
     fetch(
       `https://weatherapi-com.p.rapidapi.com/current.json?q=${location}`,
-      Options
+      options
     ).then((res) => {
       if (res.ok) {
         setValidLocation(location);
