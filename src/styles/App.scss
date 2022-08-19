@@ -429,8 +429,12 @@ div.locationSearch > button {
 
 @media (max-width: 600px) {
 	#Rain {
-		height: 105vh;
+    width: 100%;
+    visibility: hidden;
 	}
+  .drop {
+    visibility: hidden;
+  }
 }
 
 @keyframes  falling {
@@ -441,3 +445,12 @@ div.locationSearch > button {
 		transform: translate(0, 1000px)
 	}
 }
+
+// @keyframes  fallingLong {
+// 	0% {
+// 		transform: translate(0, 0)
+// 	}
+// 	100% {
+// 		transform: translate(0, 1000px)
+// 	}
+// }
