@@ -14,7 +14,7 @@ if (host === undefined) {
   );
 }
 
-const options = {
+const Options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": key,
@@ -26,7 +26,7 @@ const getWeather = async (location, setCurrentWeather) => {
   try {
     const data = await fetch(
       `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${location}&days=3`,
-      options
+      Options
     );
 
     if (!data.ok) {
@@ -159,4 +159,4 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   }
 };
 
-module.exports = { getWeather, options, findImage };
+module.exports = { getWeather, Options, findImage };

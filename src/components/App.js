@@ -4,7 +4,7 @@ import LocationSearch from "./LocationSearch";
 import LocationsDisplay from "./Locations";
 import WeatherDisplay from "./WeatherDisplay";
 import PageTitle from "./PageTitle";
-import { getWeather, options } from "./helpers";
+import { getWeather, Options } from "./helpers";
 import "bootstrap";
 
 function App() {
@@ -15,12 +15,13 @@ function App() {
   const addLocation = (location) => {
     fetch(
       `https://weatherapi-com.p.rapidapi.com/current.json?q=${location}`,
-      options
+      Options
     ).then((res) => {
       if (res.ok) {
         setValidLocation(location);
         setLocations([location, ...locations]);
       } else {
+        alert("Please enter a valid city")
         console.log("ERROR not a valid city");
       }
     });
