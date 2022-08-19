@@ -63,17 +63,16 @@ const findImage = (props, setImage, setMessage, setAnimation) => {
   const snowString = "snow";
   console.log(props.currentWeather);
 
-  // if (
-  //   props.currentWeather.current !== undefined &&
-  //   props.currentWeather.current.condition.icon
-  //     .toLowerCase()
-  //     .indexOf(nightString) >= 0
-  // ) {
-  //   setImage(imageObject.sleepy);
-  //   setMessage("It's night - why do you even want to know??");
-  //   setAnimation("disappear");
-  // } else 
   if (
+    props.currentWeather.current !== undefined &&
+    props.currentWeather.current.condition.icon
+      .toLowerCase()
+      .indexOf(nightString) >= 0
+  ) {
+    setImage(imageObject.sleepy);
+    setMessage("It's night - why do you even want to know??");
+    setAnimation("disappear");
+  } else if (
     props.currentWeather.current.condition.text
       .toLowerCase()
       .indexOf("thunder") >= 0 ||
