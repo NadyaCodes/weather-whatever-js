@@ -152,7 +152,7 @@ div.locationSearch > button {
 .locations {
   display: flex;
   position: absolute;
-  margin-top: -4rem;
+  margin-top: -6rem;
   z-index: 5;
   background-color: lighten(#edf5fa, 0.5);
 }
@@ -164,12 +164,7 @@ div.locationSearch > button {
   and (-webkit-min-device-pixel-ratio: 2) {
     .locations {
       margin-top: -9rem;
-      .locationsMinimized {
-        max-height: 2rem;
-        border: 0.08rem solid $med-dark !important;
-        color: $med-dark;
-        padding-top: .1rem;
-      }
+
       .arrow {
         font-size: 1.5rem;
       }
@@ -178,7 +173,6 @@ div.locationSearch > button {
 
 .locationTable {
   width: 20rem;
-  // max-height: 5rem;
   border-radius: 0.5rem 0 0 0.5rem;
   
 }
@@ -186,6 +180,8 @@ div.locationSearch > button {
 .locationsMinimized {
   width: 8rem;
   border-radius: 0.5rem 0 0 0.5rem;
+  max-height: 2rem;
+  padding-top: .1rem;
 }
 
 .toggleButton {
@@ -208,7 +204,7 @@ div.locationSearch > button {
 }
 
 .arrow {
-  font-size: xx-large;
+  font-size: 1.5rem;
   margin: -1rem 0 -0.5rem 0;
   padding: 0;
   padding-bottom: 0.3rem;
@@ -409,30 +405,6 @@ div.locationSearch > button {
 }
 
 
-// #drop {
-//   background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.5))  );
-//   background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.5) 100%);
-// 	width:1px;
-// 	height:89px;
-// 	position: absolute;
-// 	bottom:200px;
-// 	-webkit-animation: fall .63s linear infinite;
-//   -moz-animation: fall .63s linear infinite;
-//   animation: fall .63s linear infinite;
-// }
-
-// /* drop animation styles */
-// @-webkit-keyframes fall {
-// 	to {margin-top:900px;}
-// }
-// @-moz-keyframes fall {
-// 	to {margin-top:900px;}
-// }
-
-// @keyframes fall {
-//   to {margin-top:900px;}
-// }
-
 
 #Rain {
 	position: absolute;
@@ -466,9 +438,6 @@ div.locationSearch > button {
 		transform: translate(0, 0)
 	}
 	100% {
-    // overflow: hidden;
-    // opacity: 0;
-    // bottom: 0;
 		transform: translate(0, 1000px)
 	}
 }
