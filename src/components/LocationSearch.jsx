@@ -17,7 +17,6 @@ export default function LocationSearch(props) {
     }
   };
 
-
   return (
     <div className="locationSearch">
       <label>

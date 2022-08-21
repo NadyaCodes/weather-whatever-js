@@ -1,4 +1,6 @@
 @import "./variables";
+@import "./weather-animations";
+@import "./rain";
 
 * {
   font-family: "Dosis", sans-serif;
@@ -27,6 +29,43 @@ h3 {
   padding: 0.5rem 0rem;
 }
 
+.btn {
+  -webkit-box-shadow: -4px 0px 33px -22px $med-dark,
+    4px 0px 33px -22px $med-dark, 3px 5px 35px -10px $med-dark !important;
+  box-shadow: -4px 0px 33px -22px $med-dark, 4px 0px 33px -22px $med-dark,
+    3px 5px 35px -10px $med-dark !important;
+  margin: 0.5rem;
+  text-transform: capitalize;
+}
+
+.btn-dark-theme {
+  border: 0.08rem solid $dark-theme !important;
+}
+
+.btn-location {
+  border: 0.08rem solid $med-dark !important;
+  color: $med-dark !important;
+}
+
+.btn:hover:not(.toggleButton) {
+  transform: translate(0.1rem, -0.1rem) !important;
+  -webkit-box-shadow: -4px 0px 23px -17px $dark-theme,
+    4px 0px 23px -17px $dark-theme, 3px 5px 25px 0px $dark-theme !important;
+  box-shadow: -4px 0px 23px -17px $dark-theme, 4px 0px 23px -17px $dark-theme,
+    3px 5px 25px 0px $dark-theme !important;
+}
+
+.shadowCard {
+  margin-right: 0;
+  padding: 1rem;
+
+  -webkit-box-shadow: 0px 1px 8px 0px $dark-theme !important;
+  box-shadow: 0px 1px 8px 0px $dark-theme !important;
+  border-radius: 0.2rem;
+  background-color: transparentize(#edf5fa, 0.5);
+}
+
+//Page title
 .pageTitle {
   padding: 2rem;
 
@@ -89,32 +128,7 @@ div.pageTitle > h1 {
   animation-delay: 2s;
 }
 
-.btn {
-  -webkit-box-shadow: -4px 0px 33px -22px $med-dark,
-    4px 0px 33px -22px $med-dark, 3px 5px 35px -10px $med-dark !important;
-  box-shadow: -4px 0px 33px -22px $med-dark, 4px 0px 33px -22px $med-dark,
-    3px 5px 35px -10px $med-dark !important;
-  margin: 0.5rem;
-  text-transform: capitalize;
-}
-
-.btn-dark-theme {
-  border: 0.08rem solid $dark-theme !important;
-}
-
-.btn-location {
-  border: 0.08rem solid $med-dark !important;
-  color: $med-dark !important;
-}
-
-.btn:hover:not(.toggleButton) {
-  transform: translate(0.1rem, -0.1rem) !important;
-  -webkit-box-shadow: -4px 0px 23px -17px $dark-theme,
-    4px 0px 23px -17px $dark-theme, 3px 5px 25px 0px $dark-theme !important;
-  box-shadow: -4px 0px 23px -17px $dark-theme, 4px 0px 23px -17px $dark-theme,
-    3px 5px 25px 0px $dark-theme !important;
-}
-
+//Locations Search
 div.locationSearch > button {
   max-height: 2.4rem;
 }
@@ -135,16 +149,7 @@ div.locationSearch > button {
   align-items: center;
 }
 
-.shadowCard {
-  margin-right: 0;
-  padding: 1rem;
-
-  -webkit-box-shadow: 0px 1px 8px 0px $dark-theme !important;
-  box-shadow: 0px 1px 8px 0px $dark-theme !important;
-  border-radius: 0.2rem;
-  background-color: transparentize(#edf5fa, 0.5);
-}
-
+//Locations Card
 .locations {
   display: flex;
   position: absolute;
@@ -202,6 +207,7 @@ div.locationSearch > button {
   padding-bottom: 0.3rem;
 }
 
+//Weather Display
 .display {
   display: grid;
 }
@@ -227,139 +233,6 @@ div.locationSearch > button {
 
 .weatherImage {
   margin-bottom: 1.7rem;
-}
-
-.happyBounce {
-  animation: happy 2s linear infinite;
-}
-
-@keyframes happy {
-  0% {
-    transform: translate(0, 15px);
-  }
-  25% {
-    transform: translate(35px, -15px) rotate(10deg);
-  }
-  50% {
-    transform: translate(0, 15px);
-  }
-  75% {
-    transform: translate(-35px, -15px) rotate(-10deg);
-  }
-  100% {
-    transform: translate(0, 15px);
-  }
-}
-
-.spin {
-  animation: spin 1.5s linear infinite;
-}
-
-.spinSlow {
-  animation: spin 5s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate((360deg));
-  }
-}
-
-.disappear {
-  animation: disappear 10s linear infinite;
-}
-
-@keyframes disappear {
-  0% {
-    opacity: 100;
-  }
-  50% {
-    opacity: 0;
-    transform: rotate(-30deg);
-  }
-  100% {
-    opacity: 100;
-  }
-}
-
-.tilt {
-  animation: tilt 1.5s linear infinite;
-}
-
-@keyframes tilt {
-  25% {
-    transform: rotate(20deg);
-  }
-  75% {
-    transform: rotate(-20deg);
-  }
-}
-
-.shudderSlow {
-  animation: shudder 0.2s linear infinite;
-}
-
-.shudderFast {
-  animation: shudder 0.1s linear infinite;
-}
-
-@keyframes shudder {
-  25% {
-    transform: translateX(2px) rotate(2deg);
-  }
-  75% {
-    transform: translateX(-2px) rotate(-2deg);
-  }
-}
-
-.confused {
-  animation: confused 3s linear infinite;
-}
-
-@keyframes confused {
-  0% {
-    transform: translate(0, 7px);
-    // transform: translate(0, 15px);
-  }
-  8.3% {
-    transform: translate(25px, -7px) rotate(4deg);
-  }
-  16.7% {
-    transform: translate(50px, 7px);
-  }
-  25% {
-    transform: translate(75px, -7px) rotate(8deg);
-  }
-  33.3% {
-    transform: translate(50px, 7px);
-  }
-  41.7% {
-    transform: translate(25px, -7px) rotate(4deg);
-  }
-  50% {
-    transform: translate(0, 7px);
-  }
-  58.3% {
-    transform: translate(-25px, -7px) rotate(-4deg);
-  }
-  66.7% {
-    transform: translate(-50px, 7px);
-  }
-  75% {
-    transform: translate(-75px, -7px) rotate(-8deg);
-  }
-  83.3% {
-    transform: translate(-50px, 7px);
-  }
-  91.7% {
-    transform: translate(-25px, -7px) rotate(-4deg);
-  }
-  100% {
-    transform: translate(0, 7px);
-  }
 }
 
 .weatherTable {
@@ -461,45 +334,5 @@ div.locationSearch > button {
       margin-left: 5px;
       text-align: center;
     }
-  }
-}
-
-#Rain {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-}
-
-.drop {
-  background: $rain;
-  overflow: hidden;
-  width: 1px;
-  height: 89px;
-  position: fixed;
-  bottom: 200px;
-  z-index: 6;
-  animation: falling 1.5s linear infinite;
-}
-
-@media (max-width: 600px) {
-  #Rain {
-    width: 100%;
-    visibility: hidden;
-  }
-  .drop {
-    visibility: hidden;
-  }
-}
-
-@keyframes falling {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0, 1000px);
   }
 }

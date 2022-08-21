@@ -1,0 +1,39 @@
+#Rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.drop {
+  background: $rain;
+  overflow: hidden;
+  width: 1px;
+  height: 89px;
+  position: fixed;
+  bottom: 200px;
+  z-index: 6;
+  animation: falling 1.5s linear infinite;
+}
+
+@media (max-width: 600px) {
+  #Rain {
+    width: 100%;
+    visibility: hidden;
+  }
+  .drop {
+    visibility: hidden;
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 1000px);
+  }
+}

@@ -26,8 +26,6 @@ export default function WeatherDisplay(props) {
           {weatherText.indexOf("rain") >= 0 && (
             <Rainfall dropletsAmount={200} />
           )}
-          {/* <Rain /> */}
-          {/* <button className="rain" onClick = {() => createRain()}>Rain</button> */}
           <h2 className="featuredText">
             {props.name || "wherever this place is"},{" "}
             {props.currentWeather.location.country}

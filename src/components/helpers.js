@@ -1,4 +1,4 @@
-//get weather constants
+//Get Weather Constants
 const key = process.env.REACT_APP_WEATHER_API_KEY;
 const host = process.env.REACT_APP_WEATHER_API_HOST;
 
@@ -55,6 +55,7 @@ const imageObject = {
   fine: "./images/fine.png",
 };
 
+//Set image, message and animation
 export const findImage = (props, setImage, setMessage, setAnimation) => {
   const nightString = "night";
   const rainString = "rain";
@@ -158,5 +159,3 @@ export const findImage = (props, setImage, setMessage, setAnimation) => {
     setAnimation("");
   }
 };
-
-// module.exports = { getWeather, options, findImage };

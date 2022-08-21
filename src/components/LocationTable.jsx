@@ -11,10 +11,7 @@ export default function LocationTable(props) {
   };
 
   const deleteCity = (city) => {
-    console.log(city);
-    console.log(locations);
     const index = locations.indexOf(city);
-    console.log(index);
     if (index > -1) {
       locations.splice(index, 1);
     }
