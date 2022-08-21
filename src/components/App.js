@@ -21,7 +21,7 @@ function App() {
         setValidLocation(location);
         setLocations([location, ...locations]);
       } else {
-        alert("Please enter a valid city")
+        alert("Please enter a valid city");
         console.log("ERROR not a valid city");
       }
     });

@@ -34,13 +34,11 @@ h3 {
   justify-content: center;
 }
 
-@media only screen 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .pageTitle {
-      flex-direction: column;
-      align-items: center;
-    }
+@media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .pageTitle {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 div.pageTitle > h1 {
@@ -121,12 +119,10 @@ div.locationSearch > button {
   max-height: 2.4rem;
 }
 
-@media only screen 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .locationSearch {
-      flex-direction: column;
-    }
+@media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .locationSearch {
+    flex-direction: column;
+  }
 }
 
 .m1-1 {
@@ -157,31 +153,27 @@ div.locationSearch > button {
   background-color: lighten(#edf5fa, 0.5);
 }
 
-
 //locations section for narrow screens
-@media only screen 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .locations {
-      margin-top: -9rem;
+@media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .locations {
+    margin-top: -9rem;
 
-      .arrow {
-        font-size: 1.5rem;
-      }
+    .arrow {
+      font-size: 1.5rem;
     }
+  }
 }
 
 .locationTable {
   width: 20rem;
   border-radius: 0.5rem 0 0 0.5rem;
-  
 }
 
 .locationsMinimized {
   width: 8rem;
   border-radius: 0.5rem 0 0 0.5rem;
   max-height: 2rem;
-  padding-top: .1rem;
+  padding-top: 0.1rem;
 }
 
 .toggleButton {
@@ -286,7 +278,7 @@ div.locationSearch > button {
   }
   50% {
     opacity: 0;
-    transform: rotate(-30deg)
+    transform: rotate(-30deg);
   }
   100% {
     opacity: 100;
@@ -307,11 +299,11 @@ div.locationSearch > button {
 }
 
 .shudderSlow {
-  animation: shudder .2s linear infinite;
+  animation: shudder 0.2s linear infinite;
 }
 
 .shudderFast {
-  animation: shudder .1s linear infinite;
+  animation: shudder 0.1s linear infinite;
 }
 
 @keyframes shudder {
@@ -323,134 +315,191 @@ div.locationSearch > button {
   }
 }
 
+.confused {
+  animation: confused 3s linear infinite;
+}
 
-
-
+@keyframes confused {
+  0% {
+    transform: translate(0, 7px);
+    // transform: translate(0, 15px);
+  }
+  8.3% {
+    transform: translate(25px, -7px) rotate(4deg);
+  }
+  16.7% {
+    transform: translate(50px, 7px);
+  }
+  25% {
+    transform: translate(75px, -7px) rotate(8deg);
+  }
+  33.3% {
+    transform: translate(50px, 7px);
+  }
+  41.7% {
+    transform: translate(25px, -7px) rotate(4deg);
+  }
+  50% {
+    transform: translate(0, 7px);
+  }
+  58.3% {
+    transform: translate(-25px, -7px) rotate(-4deg);
+  }
+  66.7% {
+    transform: translate(-50px, 7px);
+  }
+  75% {
+    transform: translate(-75px, -7px) rotate(-8deg);
+  }
+  83.3% {
+    transform: translate(-50px, 7px);
+  }
+  91.7% {
+    transform: translate(-25px, -7px) rotate(-4deg);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
 
 .weatherTable {
-  @media 
-  only screen and (max-width: 760px),
-  (min-device-width: 768px) and (max-device-width: 1024px)  {
-  
+  @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
     /* Force table to not be like tables anymore */
-    table, thead, tbody, th, td, tr { 
-      display: block; 
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
     }
-    
+
     /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr { 
+    thead tr {
       position: absolute;
       top: -9999px;
       left: -9999px;
     }
 
-    thead:before{ 
-      content: "Current Weather"; 
+    thead:before {
+      content: "Current Weather";
       font-size: 2rem;
       margin-left: 5px;
       text-align: center;
     }
 
-    
-    tr { border: 1px solid #ccc; }
-    
-    td { 
+    tr {
+      border: 1px solid #ccc;
+    }
+
+    td {
       /* Behave  like a "row" */
       border: none;
       position: relative;
       left: 150px;
       max-width: 55%;
     }
-    
-    td:before { 
+
+    td:before {
       /* Now like a table header */
       position: absolute;
       /* Top/left values mimic padding */
       // top: 6px;
       // left: 200px;
       // right: 50px;
-      // width: 45%; 
+      // width: 45%;
       margin-left: -150px;
       white-space: nowrap;
     }
-    
+
     /*
     Label the data
     */
-    td:nth-of-type(1):before { content: "Temperature"; }
-    td:nth-of-type(2):before { content: "Feels Like"; }
-    td:nth-of-type(3):before { content: "Precipitation"; }
-    td:nth-of-type(4):before { content: "Wind"; }
-    td:nth-of-type(5):before { content: "Cloud"; }
-    td:nth-of-type(6):before { content: "Humidity"; }
+    td:nth-of-type(1):before {
+      content: "Temperature";
+    }
+    td:nth-of-type(2):before {
+      content: "Feels Like";
+    }
+    td:nth-of-type(3):before {
+      content: "Precipitation";
+    }
+    td:nth-of-type(4):before {
+      content: "Wind";
+    }
+    td:nth-of-type(5):before {
+      content: "Cloud";
+    }
+    td:nth-of-type(6):before {
+      content: "Humidity";
+    }
   }
 }
 
 .forecast {
-  @media 
-  only screen and (max-width: 760px),
-  (min-device-width: 768px) and (max-device-width: 1024px)  {
-      td:nth-of-type(1):before { content: "Temperature"; }
-      td:nth-of-type(2):before { content: "Precipitation"; }
-      td:nth-of-type(3):before { content: "Wind"; }
-      td:nth-of-type(4):before { content: "Humidity"; }
-      td:nth-of-type(5):before { content: "Condition"; }
-      thead:before{ 
-        content: "Tomorrow"; 
-        font-size: 2rem;
-        margin-left: 5px;
-        text-align: center;
-      }
+  @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
+    td:nth-of-type(1):before {
+      content: "Temperature";
+    }
+    td:nth-of-type(2):before {
+      content: "Precipitation";
+    }
+    td:nth-of-type(3):before {
+      content: "Wind";
+    }
+    td:nth-of-type(4):before {
+      content: "Humidity";
+    }
+    td:nth-of-type(5):before {
+      content: "Condition";
+    }
+    thead:before {
+      content: "Tomorrow";
+      font-size: 2rem;
+      margin-left: 5px;
+      text-align: center;
+    }
   }
 }
 
-
-
 #Rain {
-	position: absolute;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	width: 100vw;
-	height: 100vh;
-	z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
 .drop {
-	background: $rain;
+  background: $rain;
   overflow: hidden;
-	width: 1px;
-	height: 89px;
-	position: fixed;
-	bottom: 200px;
+  width: 1px;
+  height: 89px;
+  position: fixed;
+  bottom: 200px;
   z-index: 6;
-	animation: falling 1.5s  linear  infinite;
+  animation: falling 1.5s linear infinite;
 }
 
 @media (max-width: 600px) {
-	#Rain {
+  #Rain {
     width: 100%;
     visibility: hidden;
-	}
+  }
   .drop {
     visibility: hidden;
   }
 }
 
-@keyframes  falling {
-	0% {
-		transform: translate(0, 0)
-	}
-	100% {
-		transform: translate(0, 1000px)
-	}
+@keyframes falling {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 1000px);
+  }
 }
-
-// @keyframes  fallingLong {
-// 	0% {
-// 		transform: translate(0, 0)
-// 	}
-// 	100% {
-// 		transform: translate(0, 1000px)
-// 	}
-// }

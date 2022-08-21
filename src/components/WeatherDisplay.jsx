@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { findImage } from "./helpers";
-import  Rainfall  from  'react-rainfall-animation/src/Rain'
+import Rainfall from "react-rainfall-animation/src/Rain";
 
 export default function WeatherDisplay(props) {
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
   const [animation, setAnimation] = useState("");
-
-
 
   useEffect(() => {
     if (props.currentWeather.location) {
@@ -21,20 +19,20 @@ export default function WeatherDisplay(props) {
     weatherText = props.currentWeather.current.condition.text.toLowerCase();
   }
 
- 
   return (
     <div>
       {props.currentWeather.location !== undefined && (
         <div className="weather">
-          
-          {weatherText.indexOf("rain") >= 0 && <Rainfall  dropletsAmount={200}/>}
+          {weatherText.indexOf("rain") >= 0 && (
+            <Rainfall dropletsAmount={200} />
+          )}
           {/* <Rain /> */}
           {/* <button className="rain" onClick = {() => createRain()}>Rain</button> */}
           <h2 className="featuredText">
             {props.name || "wherever this place is"},{" "}
             {props.currentWeather.location.country}
           </h2>
-          <h4>Ummmm - it's {weatherText}?</h4>
+          <h4>Ummmm - {weatherText}?</h4>
           <h2>{message}</h2>
 
           <img

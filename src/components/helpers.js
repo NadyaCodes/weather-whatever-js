@@ -122,7 +122,7 @@ export const findImage = (props, setImage, setMessage, setAnimation) => {
     setMessage(
       "There's nothing falling from the sky yet? But there's cloud, so it COULD...👀"
     );
-    setAnimation("spinSlow");
+    setAnimation("confused");
   } else if (props.currentWeather.current.temp_c >= 30) {
     setImage(imageObject.hot);
     setMessage("Too. Freaking. Hot.");
