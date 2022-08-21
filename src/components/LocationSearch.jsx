@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import DOMPurify from "dompurify";
 
 export default function LocationSearch(props) {
   const [locationSearch, setLocationSearch] = useState("");
@@ -7,13 +8,15 @@ export default function LocationSearch(props) {
 
   const addLocation = () => {
     if (!props.locations.includes(locationSearch)) {
-      props.onSearch(locationSearch);
+      let cleanLocation = DOMPurify.sanitize(locationSearch);
+      props.onSearch(cleanLocation);
       setLocationSearch("");
     } else {
       alert("You've already picked that place. Toggle the locations menu");
       setLocationSearch("");
     }
   };
+
 
   return (
     <div className="locationSearch">
