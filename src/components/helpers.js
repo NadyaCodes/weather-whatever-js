@@ -141,7 +141,10 @@ export const findImage = (props, setImage, setMessage, setAnimation) => {
     setImage(imageObject.happySun);
     setMessage("Juuuuuuuuust right.");
     setAnimation("happyBounce");
-  } else if (props.currentWeather.current.temp_c <= 0) {
+  } else if (
+    props.currentWeather.current.temp_c <= 0 &&
+    props.currentWeather.current.temp_c > -15
+  ) {
     setImage(imageObject.cold);
     setMessage("It's a little chilly, but it's not too bad!");
     setAnimation("shudderSlow");
